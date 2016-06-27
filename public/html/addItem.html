@@ -1,0 +1,21 @@
+<div class="container">
+    <form ng-submit='addItem()'>
+        <div class="form-group">
+            <label>Item Name</label>
+            <input type="text" class="form-control" placeholder="Name" ng-model='newItem.name' required>
+        </div>
+        <div class="form-group">
+            <label>Item Description</label>
+            <input type="text" class="form-control" placeholder="Description" ng-model='newItem.description' required>
+        </div>
+        <div class="form-group">
+            <label>Value</label>
+            <input type="number" class="form-control" placeholder="Value" ng-model='newItem.value' min='0' required>
+        </div>
+        <div class="form-group">
+            <label>Room</label>
+            <input type="number" class="form-control" placeholder="Room Number" ng-model='newItem.room' min="0" required>
+        </div>
+        <button class="btn btn-primary btn-block">Submit</button>
+    </form>
+</div>

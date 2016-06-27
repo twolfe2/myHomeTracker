@@ -1,0 +1,56 @@
+<div class="container">
+  
+<!-- 
+  <ul>
+    <li ng-repeat='item in items'>{{item}}</li>
+  </ul> -->
+
+<br>
+      <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center">Items</h3>
+                <br>
+            </div>
+            <div class="panel-body">
+
+              <table class="table" ng-show='items.length > 0'>
+              <!-- <pre>Sort by = {{propertyName}}; reverse = {{reverse}}</pre> -->
+                  <label class="col-xs-3 col-xs-offset-9">See Items by room:
+                      <input class="form-control" ng-model='roomNum' ng-keyprees='getTotal()'>
+                  </label>
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>Value</th>
+                          <th>Room</th>
+                          <th>Modify</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat='item in items | filter:{room: roomNum} track by item.id'>
+                          <td>{{item.name}}</td>
+                          <td>{{item.description}}</td>
+                          <td>{{item.value | currency}}</td>
+                          <th>{{item.room}}</th>
+                          <td>
+                              <button class="btn btn-danger btn-xs" ng-click='deleteItem(item.id)'>X</button>
+                              <button class="btn btn-success btn-xs" ng-click='editItem(item)'>Edit</button>
+                          </td>
+                      </tr>
+                  </tbody>
+                  <thead>
+                  <tr>
+                      <th></th>
+                      <th class='text-right'>Total:</th>
+                      <th ng-class="{success: total >= 0}">{{getTotal() | currency}}</th>
+                      <th></th>
+                  </tr>
+                  </thead>
+              </table>
+
+
+            
+            </div>
+
+</div>
